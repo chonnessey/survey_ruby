@@ -5,12 +5,12 @@ class SurveysController< ApplicationController
     render :index  
   end
 
+
   def new
-    def new
-      @survey = Survey.new
-      render :new
-    end
+    @survey = Survey.new
+    render :new
   end
+
 
   def create
     @survey = Survey.new(survey_params)
@@ -48,8 +48,8 @@ class SurveysController< ApplicationController
   end
 
   private
-  def survey_params
-    params.require(:survey).permit(:survey)
-  end
+    def survey_params
+      params.require(:survey).permit(:name)
+    end
 
 end
