@@ -1,4 +1,4 @@
-class SurveysCont oller< ApplicationController
+class SurveysController< ApplicationController
 
   def index
     @surveys = Survey.all
@@ -15,6 +15,7 @@ class SurveysCont oller< ApplicationController
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
+      flash[:notice] = "Survey Successfully Added!"
       redirect_to surveys_path
     else
       render :new
